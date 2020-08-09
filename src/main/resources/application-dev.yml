@@ -1,0 +1,26 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    username: my_base
+    url: jdbc:mysql://localhost:3306/mybase?useUnicode=true&characterEncoding=UTF-8
+    password: cC!@#123$%^
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 50
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.cc.base.sys.bean
+  #显示sql
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  config: classpath:logconf/logback-dev.xml
+
